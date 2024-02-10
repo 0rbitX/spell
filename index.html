@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
-    <head> 
+<head>
         <meta charset="utf-8">
         <title>New News</title>
         <style>
+        
         nav { 
                 position: fixed;
                 background-color: rgb(10, 42, 102);
@@ -14,9 +15,10 @@
               
             }
             #sports{
-                position:relative;
-                left:456px;
-               bottom:200%;
+                
+                left:360px;
+                bottom:60px;
+                top:-92px;
             }
                 #our-logo{
                     position:relative;
@@ -29,7 +31,7 @@
                 }
                 #the-whoot{
                  position:relative;
-                    top:-87px;
+                    top:-37px;
                     left:206px;
                     font-family:garamond,serif;
                 }
@@ -46,9 +48,9 @@
                     top:245px;
                 }
                 #games{
-                position:relative;
-                    left:651px;
-                     bottom:200%;
+                 background:blue;
+                    left:368px;
+                     top:-92px;
                 }
                 #footer{
                     background-color:rgb(181, 172, 181); 
@@ -72,45 +74,124 @@
                     font-size:50px;
                 }
                 #wlrdlogo{
-                width:8%;
+                height:8%;
+                }
+                #go{
+                  
+                    position:relative;
+                    left:368px;
+                     top:-92px;
+                }
+                #ps{
+                    font-size:1px;
+                }
+                #inc{
+                    color:red;
                 }
             </style>
-        <link rel="shortcut icon" type="image/x-icon" href="/willard-news.jpg">
+        <link rel="shortcut icon" type="image/x-icon" href="/favicon.png">
     </head>
     <body>
      <nav>
-     <img  id ="wlrdlogo"src="willard-news.jpg" alt="willard news logo">
-     <h1 id ="the-whoot"><span id="hoot1">New</span><span id ="hoot"> news</span></h1>
-         <a href="#"id ="sports"   class="Links">Sports</a>
-         <a href="#" id = "games"
-         class = "Links">Games</a>
-         
+     <img id="wlrdlogo" src="https://us02images.zoom.us/p/v2/85d2804bab8b2d21eaeb53c3ba9cbea7ea8b9014c3c48b38f700835cf5ea13cc/0549b252-f354-4a3f-b6c2-6ac210123651?type=large&amp;_=762" alt="willard news logo">
+     <h1 id="the-whoot"><span id="hoot1">New</span><span id="hoot"> news</span></h1>
+         <a href="#" id="sports" class="Links">Sports</a>
+         <select id="games" class="Links"><option>games</option><option id="" value="t"> the speller</option></select>
+         <button id="go">Go!</button>
         
      </nav>
      
-      <p>
-        hey... no scrolling this high!!!
-      </p>
-    
-<h1 id ="The-whoot"><span id="hoot1">New</span><span id ="hoot"> News</span></h1>
+    <p>&nbsp; </p>
+    <p id="f">&nbsp;</p><div id="hm" style="">
+<h1 id="The-whoot"><span id="hoot1">New</span><span id="hoot"> News</span></h1>
 <ul>
     <li id="li-links1">v1:Not out yet <a class="li-links" href="#">click here</a></li>
     <li id="li-links1">v2:Not out yet <a class="li-links" href="#">click here</a></li>
     <li id="li-links1">v3:Not out yet <a class="li-links" href="#">click here</a></li>
     <li id="li-links1">v4:Not out yet <a class="li-links" href="#">click here</a></li>
     </ul>
-<p>No content yet. Check Back later! </p>
+<p>Uh Oh! there's no content yet. </p>
+
+</div>
+
+
+<div id="signIn" style="">
+<input type="password" id="tsp" style="display: inline-block;">
+<button id="contTS" style="display: inline-block;">start</button>
+
+<p id="inc"></p>
+</div>
+<div id="entr_word" style="display: block;">
+    <textarea placeholder="Enter your words here..." id="txt_wrd_entr"></textarea>
+    <button id="entr_words_cont">continue</button>
+</div>
+<div id="spelling_bee"></div>
 <footer id="footer">
 <p>__________________________________________________________</p>
     <p>all coding by </p>
     
-    <div id ="fireHtml"><span id="red">Fir</span><span id="orange">eH</span><span id="yellow">TML</span></div>
+    <div id="fireHtml"><span id="red">Fir</span><span id="orange">eH</span><span id="yellow">TML</span></div>
     <p>copyright New News of Willard Elementary,<br>Evanston ,  IL</p>
 </footer>
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script> 
-  <script>
+  <script>$('#entr_word').hide();
+var tsp = $('#tsp');
+tsp.hide();
+$('#contTS').hide();
+console.clear();
+var openTS = function () {
   
-  </script>
+    $('#hm').hide();
+    $('<h1>').text('the speller').addClass('ts2').prependTo('#signIn');
+    $('<p>').text('password:').addClass('ps').appendTo('#lmb');
+    tsp.show();
+    $('#contTS').show();
+};
+var wordEnterTS = function () {
+    let unfilteredWords = $('#txt_wrd_entr').val();
+    let filteredWords = unfilteredWords.split(',');
+    KAInfiniteLoopProtect();
+    $('#entr_word').show();
+};
+$('#entr_words_cont').on('click', function () {
+   let unfilteredWords = $('#txt_wrd_entr').val();
+    let filteredWords = unfilteredWords.split(',');
+    var words = JSON.parse(sessionStorage.getItem('words'));
+    if (words !== null) {
+       if( confirm('You have words from previous sessions. If you press ok, this will overide your past words. is this ok? (press cancel to continue from your past session words.)')===true){}else{
+           filteredWords = words;
+           console.log("brought back old words")
+       }
+    }
+    console.log(words);
+    
+    sessionStorage.setItem('words', JSON.stringify(filteredWords));
+    let random = Math.floor(Math.random() * filteredWords.length);
+    let thisPickedWord = filteredWords[random];
+    let utterance = new SpeechSynthesisUtterance("how do you spell"+thisPickedWord+"?");
+speechSynthesis.speak(utterance);
+    console.log(thisPickedWord);
+    $('#entr_word').hide();
+});
+$('#contTS').on('click', function () {
 
-    </body>
-</html>
+    console.log('wr');
+    if ($(tsp).val() === 'goas28' || sessionStorage.getItem('signin') === 'cor') {
+        $('#signIn').hide();
+        console.log('correct');
+        sessionStorage.setItem('signin', 'cor');
+        wordEnterTS();
+    } else {
+        $('#inc').text('incorrect');
+    }
+});
+$('#go').on('click', function () {
+
+    if ($('#games').val() === 't') {
+        console.log('yes!');
+        openTS();
+    }
+});</script>
+
+    
+</body></html>
