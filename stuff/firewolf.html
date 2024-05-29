@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html><head></head><body>
+    <form id="search">
+<input type="text"id="url"><button id="search">go</button>
+</form>
+    
     <script>
-        var i = ""
+$("#search").on("click",function(){
+        $.ajax({ url: $("#url").val(), success: function(data) { document.body.innerHTML = url; } });})
     </script>
 </body></html>
