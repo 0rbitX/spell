@@ -24,6 +24,11 @@
   background-repeat: no-repeat;
   background-size: cover;
          }
+         button{
+            font-family: "Rubik Maps", system-ui;
+  font-weight: 400;
+  font-style: 20%;
+         }
      </style>
         <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -32,15 +37,24 @@
         <title>Spelling practice</title>
     </head>
     <body>
-        <div><<h1 id="G">Spelling</h1>
+        <div id="start-page"><h1 id="G">Spelling</h1>
             <p>Practice</p>
             <button id="start">start</button>
         </div>
-    
+    <div id="entrwrds">
+        <textarea id="words"></textarea><button id="go">Go</button>
+    </div>
        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-       <script>
+       <script> 
+       var words;
+        $("#entrwrds").hide()
        $("#start").on("click",function(){
-
+        $("#start-page").hide()
+        $("#entrwrds").show()
+       })
+       $("#go").on("click",function(){
+         words = $("#words").split(",")
+        $("#entrwrds").hide()
        })
        </script>
     </body>
