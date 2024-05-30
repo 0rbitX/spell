@@ -1,11 +1,21 @@
 <!DOCTYPE html>
-<html><head></head><body>
-    <form id="search">
-<input type="text"id="url"><button id="search">go</button>
-</form>
-    
+<html>
+  <head>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div id="enter">
+    <input type="text">
+      <button id=""srch>search</button>
+    </div>
+    <browser type="content">
+    </browser>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script>
-$("#search").on("click",function(){
-        $.ajax({ url: $("#url").val(), success: function(data) { document.body.innerHTML = url; } });})
+        
+        $("srch#").on("click",function(){
+            $.ajax({ url: $("#url").val(), success: function(data) {  console.log(data)}});
+        })
     </script>
-</body></html>
+  </body>
+</html>
