@@ -270,8 +270,12 @@ $("#11").text("Oops! The correct spelling is "+words[thisnum]+".")
             total++;
             used[thisnum]=true;
         })
-        
+        $("#so").on("click",function(){
+            localStorage.setItem("tn",thisnum)
+            localStorage.setItem("total",total)
+        })
 
        </script>
+       <footer style="position: relative; bottom:-60ch"><button id="so">sign out</button></footer>
     </body>
 </html>

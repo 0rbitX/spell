@@ -9,11 +9,15 @@
     <title>Report</title>
     <h1>Report</h1>
    <canvas id="chartId" aria-label="chart" height="350" width="580"></canvas>
+   <h3 id="urscore">You scored an ERROR out of ERROR.</h3>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.1.1/chart.min.js"></script>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
    <script>
       var chrt = document.getElementById("chartId").getContext("2d");
       var cor = localStorage.getItem("correct")
       var incor = localStorage.getItem("incorrect")
+      var total = localStorage.getItem("total")
+      
       var chartId = new Chart(chrt, {
          type: 'doughnut',
          data: {
@@ -29,6 +33,7 @@
             responsive: false,
          },
       });
+ $("#urscore").text("You scored a "+cor+" out of "+total+". Nice job!")
    </script>
 </body>
 </html>
