@@ -248,7 +248,8 @@ $("#pro").on("click",function(){
                 setTimeout(function(){
                     $("#page").show()
                     $("#check").hide()
-                    
+                    fetchword()
+                    $("#word").val("")
                     
                 },2000)
                 correct++;
@@ -269,6 +270,7 @@ $("#11").text("Oops! The correct spelling is "+words[thisnum]+".")
             fetchword()
             total++;
             used[thisnum]=true;
+            $("#word").val("")
         })
         $("#so").on("click",function(){
             localStorage.setItem("tn",thisnum)
