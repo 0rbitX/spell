@@ -1,0 +1,34 @@
+<!DOCTYPE>
+<html>
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1" />
+   
+</head>
+<body>
+    <title>Report</title>
+    <h1>Report</h1>
+   <canvas id="chartId" aria-label="chart" height="350" width="580"></canvas>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.1.1/chart.min.js"></script>
+   <script>
+      var chrt = document.getElementById("chartId").getContext("2d");
+      var cor = localStorage.getItem("correct")
+      var incor = localStorage.getItem("incorrect")
+      var chartId = new Chart(chrt, {
+         type: 'doughnut',
+         data: {
+            labels: ["Correct", "Incorrect"],
+            datasets: [{
+               label: "online tutorial subjects",
+               data: [cor, incor],
+               backgroundColor: ['green', 'red'],
+               hoverOffset: 5
+            }],
+         },
+         options: {
+            responsive: false,
+         },
+      });
+   </script>
+</body>
+</html>

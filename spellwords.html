@@ -59,6 +59,9 @@
         function fetchword(){
             if(total===words.length){
                 window.location.href="end.html"
+                localStorage.setItem("correct",correct)
+                localStorage.setItem("incorrect",incorrect)
+                localStorage.setItem("total",total)
             }else{
             thisnum = Math.floor(Math.random()* words.length)
             if(used[thisnum===true]){
