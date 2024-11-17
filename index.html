@@ -37,7 +37,7 @@
         <title>Spelling practice</title>
     </head>
     <body>
-        <div id="start-page"><h1 id="G">Spelling</h1>
+        <div id="start-page"><h1 id="G">Spelling Bee</h1>
             <p>Practice</p>
             <button id="start">start</button>
         </div>
@@ -61,6 +61,12 @@
         window.location.href="spellwords.html"
         localStorage.setItem("words",JSON.stringify(words))
        })
+       $("#mft").on("click",function(){
+        localStorage.setItem("cor",0)
+        localStorage.setItem("incor",0)
+        localStorage.setItem("incor",0)
+       })
        </script>
+       <footer style="position: relative; bottom:-50ch"><button id="mft">Its my first time here</button>
     </body>
 </html>

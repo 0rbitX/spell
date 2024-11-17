@@ -51,8 +51,8 @@
        var thisnum = Math.floor(Math.random()* words.length)
        var used={}
        var total =0;
-       var correct=0;
-       var incorrect = 0;
+       var correct=localStorage.getItem("cor");
+       var incorrect = localStorage.getItem("cor");
        console.log(thisnum)
        console.log(words)
        fetchword()
@@ -242,7 +242,7 @@ $("#pro").on("click",function(){
     });}}
         }
         $("#go").on("click",function(){
-            if(words[thisnum]===$("#word").val()){
+            if(words[thisnum].toLowerCase()===$("#word").val().toLowerCase()){
                 $("#page").hide()
                 $("#check").show()
                 setTimeout(function(){
@@ -272,7 +272,10 @@ $("#11").text("Oops! The correct spelling is "+words[thisnum]+".")
         })
         $("#so").on("click",function(){
             localStorage.setItem("tn",thisnum)
-            localStorage.setItem("total",total)
+            localStorage.setItem("cor",correct)
+            localStorage.setItem("incor",incorrect)
+            window.location.href = "so.html"
+            
         })
 
        </script>
