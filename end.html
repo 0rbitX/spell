@@ -10,6 +10,7 @@
     <h1>Report</h1>
    <canvas id="chartId" aria-label="chart" height="350" width="580"></canvas>
    <h3 id="urscore">You scored an ERROR out of ERROR.</h3>
+   <h3>To restart, click <a href="index.html">here.</a></h3>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.1.1/chart.min.js"></script>
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
    <script>
@@ -34,6 +35,9 @@
          },
       });
  $("#urscore").text("You scored a "+cor+" out of "+total+". Nice job!")
+ localStorage.setItem("cor",0)
+ localStorage.setItem("incor",0)
+
    </script>
 </body>
 </html>
