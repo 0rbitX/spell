@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+     <style>
+         h1{
+           
+         
+         }
+        
+         #bg{
+             /* The image used */
+  background-image: url("SBP.png");
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+         }
+         button{
+            font-family: "Rubik Maps", system-ui;
+  font-weight: 400;
+  font-style: 20%;
+         }
+     </style>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik+Glitch+Pop&family=Rubik+Maps&display=swap" rel="stylesheet">
+
+        <title>Spell words</title>
+    </head>
+    <body>
+        <div id="page"><h1 id="Word">Spell...</h1>
+            <p id="def">ERROR loading def</p>
+            <button id="pro">Pronounce</button>
+            <button id="go">Check</button>
+        </div>
+    <div id="check"><img src="https://as1.ftcdn.net/v2/jpg/05/57/80/90/1000_F_557809065_2qqpQ5Ttcd8gVCSHCKJEmIHUceZ3WzYh.jpg" style ="height:400px;">
+    <h2>Correct</h2>
+    </div>
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+       <script> 
+       $("#check").hide()
+       
+    var def;
+       var words=JSON.parse(localStorage.getItem("words"))
+       var thisnum = Math.floor(Math.random()* words.length)
+       var used={}
+       var total =0;
+       var correct=0;
+       var incorrect = 0;
+       console.log(thisnum)
+       console.log(words)
+       fetchword()
+        function fetchword(){
+            if(total===words.length){
+                window.location.href="end.html"
+            }else{
+            thisnum = Math.floor(Math.random()* words.length)
+            if(used[thisnum===true]){}else{fetch('https://dictionaryapi.com/api/v3/references/collegiate/json/'+words[thisnum]+'?key=01fdd82d-9121-491f-b0fd-9d1910e24235') // api for the get request
+    .then(response => response.json())
+    .then(data => {
+        console.log(data)
+         def=data;
+        console.log(def)
+        let utterance = new SpeechSynthesisUtterance("Spell... "+words[thisnum]);
+speechSynthesis.speak(utterance);
+$("#def").text(def[0].fl+", "+def[0].shortdef[0]+"; "+def[1].fl+", "+def[1].shortdef[0])
+$("#pro").on("click",function(){
+    let utterance = new SpeechSynthesisUtterance("Spell... "+words[thisnum]);
+    speechSynthesis.speak(utterance);
+})
+    });}}
+        }
+        
+        
+
+       </script>
+    </body>
+</html>
