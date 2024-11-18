@@ -46,7 +46,12 @@
     </div>
        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
        <script> 
-       var words;
+       if(localStorage.getItem("newtospell")){
+        localStorage.setItem("cor",0)
+        localStorage.setItem("incor",0)
+        localStorage.setItem("newtospell",false)
+       }
+         var words;
        var w;
         $("#entrwrds").hide()
        $("#start").on("click",function(){
@@ -61,12 +66,8 @@
         window.location.href="spellwords.html"
         localStorage.setItem("words",JSON.stringify(words))
        })
-       $("#mft").on("click",function(){
-        localStorage.setItem("cor",0)
-        localStorage.setItem("incor",0)
-        localStorage.setItem("incor",0)
-       })
+       
        </script>
-       <footer style="position: relative; bottom:-50ch"><button id="mft">Its my first time here</button>
+       <footer style="position: relative; bottom:-50ch">
     </body>
 </html>
