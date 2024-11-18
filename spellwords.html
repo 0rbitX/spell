@@ -43,244 +43,245 @@
         <button id="wrongnext">Ok, Got It!</button>    
     </div>
        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+       
+       <footer style="position: relative; bottom:-60ch"><button id="soo">sign out</button></footer>
        <script> 
-       $("#check").hide()
-       $("#wrong").hide()
-    var def;
-       var words=JSON.parse(localStorage.getItem("words"))
-       var thisnum = Math.floor(Math.random()* words.length)
-       var used={}
-       var total =0;
-       var correct=localStorage.getItem("cor");
-       var incorrect = localStorage.getItem("cor");
-       console.log(thisnum)
-       console.log(words)
-       fetchword()
-        function fetchword(){
-            if(total===words.length){
-                window.location.href="end.html"
-                localStorage.setItem("correct",correct)
-                localStorage.setItem("incorrect",incorrect)
-                localStorage.setItem("total",total)
-            }else{
-            thisnum = Math.floor(Math.random()* words.length)
-            if(used[thisnum===true]){
-                thisnum = Math.floor(Math.random()* words.length)
-                if(used[thisnum===true]){
-                thisnum = Math.floor(Math.random()* words.length)
-                if(used[thisnum===true]){
-                thisnum = Math.floor(Math.random()* words.length)
-                if(used[thisnum===true]){
-                thisnum = Math.floor(Math.random()* words.length)
-                if(used[thisnum===true]){
-                thisnum = Math.floor(Math.random()* words.length)
-                if(used[thisnum===true]){
-                thisnum = Math.floor(Math.random()* words.length)
-                if(used[thisnum===true]){
-                thisnum = Math.floor(Math.random()* words.length)
-                if(used[thisnum===true]){
-                thisnum = Math.floor(Math.random()* words.length)
-                if(used[thisnum===true]){
-                thisnum = Math.floor(Math.random()* words.length)
-                if(used[thisnum===true]){
-                thisnum = Math.floor(Math.random()* words.length)
-                if(used[thisnum===true]){
-                thisnum = Math.floor(Math.random()* words.length)
-            }else{fetch('https://dictionaryapi.com/api/v3/references/collegiate/json/'+words[thisnum]+'?key=01fdd82d-9121-491f-b0fd-9d1910e24235') // api for the get request
-    .then(response => response.json())
-    .then(data => {
-        console.log(data)
-         def=data;
-        console.log(def)
-        let utterance = new SpeechSynthesisUtterance("Spell... "+words[thisnum]);
-speechSynthesis.speak(utterance);
-$("#def").text(def[0].fl+", "+def[0].shortdef[0]+"; "+def[1].fl+", "+def[1].shortdef[0])
-$("#pro").on("click",function(){
-    let utterance = new SpeechSynthesisUtterance("Spell... "+words[thisnum]);
-    speechSynthesis.speak(utterance);
-})
-    });}
-            }else{fetch('https://dictionaryapi.com/api/v3/references/collegiate/json/'+words[thisnum]+'?key=01fdd82d-9121-491f-b0fd-9d1910e24235') // api for the get request
-    .then(response => response.json())
-    .then(data => {
-        console.log(data)
-         def=data;
-        console.log(def)
-        let utterance = new SpeechSynthesisUtterance("Spell... "+words[thisnum]);
-speechSynthesis.speak(utterance);
-$("#def").text(def[0].fl+", "+def[0].shortdef[0]+"; "+def[1].fl+", "+def[1].shortdef[0])
-$("#pro").on("click",function(){
-    let utterance = new SpeechSynthesisUtterance("Spell... "+words[thisnum]);
-    speechSynthesis.speak(utterance);
-})
-    });}
-            }else{fetch('https://dictionaryapi.com/api/v3/references/collegiate/json/'+words[thisnum]+'?key=01fdd82d-9121-491f-b0fd-9d1910e24235') // api for the get request
-    .then(response => response.json())
-    .then(data => {
-        console.log(data)
-         def=data;
-        console.log(def)
-        let utterance = new SpeechSynthesisUtterance("Spell... "+words[thisnum]);
-speechSynthesis.speak(utterance);
-$("#def").text(def[0].fl+", "+def[0].shortdef[0]+"; "+def[1].fl+", "+def[1].shortdef[0])
-$("#pro").on("click",function(){
-    let utterance = new SpeechSynthesisUtterance("Spell... "+words[thisnum]);
-    speechSynthesis.speak(utterance);
-})
-    });}
-            }else{fetch('https://dictionaryapi.com/api/v3/references/collegiate/json/'+words[thisnum]+'?key=01fdd82d-9121-491f-b0fd-9d1910e24235') // api for the get request
-    .then(response => response.json())
-    .then(data => {
-        console.log(data)
-         def=data;
-        console.log(def)
-        let utterance = new SpeechSynthesisUtterance("Spell... "+words[thisnum]);
-speechSynthesis.speak(utterance);
-$("#def").text(def[0].fl+", "+def[0].shortdef[0]+"; "+def[1].fl+", "+def[1].shortdef[0])
-$("#pro").on("click",function(){
-    let utterance = new SpeechSynthesisUtterance("Spell... "+words[thisnum]);
-    speechSynthesis.speak(utterance);
-})
-    });}
-            }else{fetch('https://dictionaryapi.com/api/v3/references/collegiate/json/'+words[thisnum]+'?key=01fdd82d-9121-491f-b0fd-9d1910e24235') // api for the get request
-    .then(response => response.json())
-    .then(data => {
-        console.log(data)
-         def=data;
-        console.log(def)
-        let utterance = new SpeechSynthesisUtterance("Spell... "+words[thisnum]);
-speechSynthesis.speak(utterance);
-$("#def").text(def[0].fl+", "+def[0].shortdef[0]+"; "+def[1].fl+", "+def[1].shortdef[0])
-$("#pro").on("click",function(){
-    let utterance = new SpeechSynthesisUtterance("Spell... "+words[thisnum]);
-    speechSynthesis.speak(utterance);
-})
-    });}
-            }else{fetch('https://dictionaryapi.com/api/v3/references/collegiate/json/'+words[thisnum]+'?key=01fdd82d-9121-491f-b0fd-9d1910e24235') // api for the get request
-    .then(response => response.json())
-    .then(data => {
-        console.log(data)
-         def=data;
-        console.log(def)
-        let utterance = new SpeechSynthesisUtterance("Spell... "+words[thisnum]);
-speechSynthesis.speak(utterance);
-$("#def").text(def[0].fl+", "+def[0].shortdef[0]+"; "+def[1].fl+", "+def[1].shortdef[0])
-$("#pro").on("click",function(){
-    let utterance = new SpeechSynthesisUtterance("Spell... "+words[thisnum]);
-    speechSynthesis.speak(utterance);
-})
-    });}
-            }else{fetch('https://dictionaryapi.com/api/v3/references/collegiate/json/'+words[thisnum]+'?key=01fdd82d-9121-491f-b0fd-9d1910e24235') // api for the get request
-    .then(response => response.json())
-    .then(data => {
-        console.log(data)
-         def=data;
-        console.log(def)
-        let utterance = new SpeechSynthesisUtterance("Spell... "+words[thisnum]);
-speechSynthesis.speak(utterance);
-$("#def").text(def[0].fl+", "+def[0].shortdef[0]+"; "+def[1].fl+", "+def[1].shortdef[0])
-$("#pro").on("click",function(){
-    let utterance = new SpeechSynthesisUtterance("Spell... "+words[thisnum]);
-    speechSynthesis.speak(utterance);
-})
-    });}
-            }else{fetch('https://dictionaryapi.com/api/v3/references/collegiate/json/'+words[thisnum]+'?key=01fdd82d-9121-491f-b0fd-9d1910e24235') // api for the get request
-    .then(response => response.json())
-    .then(data => {
-        console.log(data)
-         def=data;
-        console.log(def)
-        let utterance = new SpeechSynthesisUtterance("Spell... "+words[thisnum]);
-speechSynthesis.speak(utterance);
-$("#def").text(def[0].fl+", "+def[0].shortdef[0]+"; "+def[1].fl+", "+def[1].shortdef[0])
-$("#pro").on("click",function(){
-    let utterance = new SpeechSynthesisUtterance("Spell... "+words[thisnum]);
-    speechSynthesis.speak(utterance);
-})
-    });}
-            }else{fetch('https://dictionaryapi.com/api/v3/references/collegiate/json/'+words[thisnum]+'?key=01fdd82d-9121-491f-b0fd-9d1910e24235') // api for the get request
-    .then(response => response.json())
-    .then(data => {
-        console.log(data)
-         def=data;
-        console.log(def)
-        let utterance = new SpeechSynthesisUtterance("Spell... "+words[thisnum]);
-speechSynthesis.speak(utterance);
-$("#def").text(def[0].fl+", "+def[0].shortdef[0]+"; "+def[1].fl+", "+def[1].shortdef[0])
-$("#pro").on("click",function(){
-    let utterance = new SpeechSynthesisUtterance("Spell... "+words[thisnum]);
-    speechSynthesis.speak(utterance);
-})
-    });}
-            }else{fetch('https://dictionaryapi.com/api/v3/references/collegiate/json/'+words[thisnum]+'?key=01fdd82d-9121-491f-b0fd-9d1910e24235') // api for the get request
-    .then(response => response.json())
-    .then(data => {
-        console.log(data)
-         def=data;
-        console.log(def)
-        let utterance = new SpeechSynthesisUtterance("Spell... "+words[thisnum]);
-speechSynthesis.speak(utterance);
-$("#def").text(def[0].fl+", "+def[0].shortdef[0]+"; "+def[1].fl+", "+def[1].shortdef[0])
-$("#pro").on("click",function(){
-    let utterance = new SpeechSynthesisUtterance("Spell... "+words[thisnum]);
-    speechSynthesis.speak(utterance);
-})
-    });}
-            }else{fetch('https://dictionaryapi.com/api/v3/references/collegiate/json/'+words[thisnum]+'?key=01fdd82d-9121-491f-b0fd-9d1910e24235') // api for the get request
-    .then(response => response.json())
-    .then(data => {
-        console.log(data)
-         def=data;
-        console.log(def)
-        let utterance = new SpeechSynthesisUtterance("Spell... "+words[thisnum]);
-speechSynthesis.speak(utterance);
-$("#def").text(def[0].fl+", "+def[0].shortdef[0]+"; "+def[1].fl+", "+def[1].shortdef[0])
-$("#pro").on("click",function(){
-    let utterance = new SpeechSynthesisUtterance("Spell... "+words[thisnum]);
-    speechSynthesis.speak(utterance);
-})
-    });}}
-        }
-        $("#go").on("click",function(){
-            if(words[thisnum].toLowerCase()===$("#word").val().toLowerCase()){
-                $("#page").hide()
-                $("#check").show()
-                setTimeout(function(){
-                    $("#page").show()
-                    $("#check").hide()
-                    fetchword()
-                    $("#word").val("")
-                    
-                },2000)
-                correct++;
-                total++;
-                used[thisnum]=true;
-                console.log("total updated")
-                fetchword()
-            }else{
-                incorrect++;
-$("#page").hide()
-$("#wrong").show()
-$("#11").text("Oops! The correct spelling is "+words[thisnum]+".")
-            }
-        })
-        $("#wrongnext").on("click",function(){
-            $("#page").show()
-            $("#wrong").hide()
-            fetchword()
-            total++;
-            used[thisnum]=true;
-            $("#word").val("")
-        })
-        $("#so").on("click",function(){
-            localStorage.setItem("tn",thisnum)
-            localStorage.setItem("cor",correct)
-            localStorage.setItem("incor",incorrect)
-            window.location.href = "so.html"
-            
-        })
-
-       </script>
-       <footer style="position: relative; bottom:-60ch"><button id="so">sign out</button></footer>
+        $("#check").hide()
+        $("#wrong").hide()
+     var def;
+        var words=JSON.parse(localStorage.getItem("words"))
+        var thisnum = Math.floor(Math.random()* words.length)
+        var used={}
+        var total =0;
+        var correct=localStorage.getItem("cor");
+        var incorrect = localStorage.getItem("cor");
+        console.log(thisnum)
+        console.log(words)
+        fetchword()
+         function fetchword(){
+             if(total===words.length){
+                 window.location.href="end.html"
+                 localStorage.setItem("correct",correct)
+                 localStorage.setItem("incorrect",incorrect)
+                 localStorage.setItem("total",total)
+             }else{
+             thisnum = Math.floor(Math.random()* words.length)
+             if(used[thisnum===true]){
+                 thisnum = Math.floor(Math.random()* words.length)
+                 if(used[thisnum===true]){
+                 thisnum = Math.floor(Math.random()* words.length)
+                 if(used[thisnum===true]){
+                 thisnum = Math.floor(Math.random()* words.length)
+                 if(used[thisnum===true]){
+                 thisnum = Math.floor(Math.random()* words.length)
+                 if(used[thisnum===true]){
+                 thisnum = Math.floor(Math.random()* words.length)
+                 if(used[thisnum===true]){
+                 thisnum = Math.floor(Math.random()* words.length)
+                 if(used[thisnum===true]){
+                 thisnum = Math.floor(Math.random()* words.length)
+                 if(used[thisnum===true]){
+                 thisnum = Math.floor(Math.random()* words.length)
+                 if(used[thisnum===true]){
+                 thisnum = Math.floor(Math.random()* words.length)
+                 if(used[thisnum===true]){
+                 thisnum = Math.floor(Math.random()* words.length)
+                 if(used[thisnum===true]){
+                 thisnum = Math.floor(Math.random()* words.length)
+             }else{fetch('https://dictionaryapi.com/api/v3/references/collegiate/json/'+words[thisnum]+'?key=01fdd82d-9121-491f-b0fd-9d1910e24235') // api for the get request
+     .then(response => response.json())
+     .then(data => {
+         console.log(data)
+          def=data;
+         console.log(def)
+         let utterance = new SpeechSynthesisUtterance("Spell... "+words[thisnum]);
+ speechSynthesis.speak(utterance);
+ $("#def").text(def[0].fl+", "+def[0].shortdef[0]+"; "+def[1].fl+", "+def[1].shortdef[0])
+ $("#pro").on("click",function(){
+     let utterance = new SpeechSynthesisUtterance("Spell... "+words[thisnum]);
+     speechSynthesis.speak(utterance);
+ })
+     });}
+             }else{fetch('https://dictionaryapi.com/api/v3/references/collegiate/json/'+words[thisnum]+'?key=01fdd82d-9121-491f-b0fd-9d1910e24235') // api for the get request
+     .then(response => response.json())
+     .then(data => {
+         console.log(data)
+          def=data;
+         console.log(def)
+         let utterance = new SpeechSynthesisUtterance("Spell... "+words[thisnum]);
+ speechSynthesis.speak(utterance);
+ $("#def").text(def[0].fl+", "+def[0].shortdef[0]+"; "+def[1].fl+", "+def[1].shortdef[0])
+ $("#pro").on("click",function(){
+     let utterance = new SpeechSynthesisUtterance("Spell... "+words[thisnum]);
+     speechSynthesis.speak(utterance);
+ })
+     });}
+             }else{fetch('https://dictionaryapi.com/api/v3/references/collegiate/json/'+words[thisnum]+'?key=01fdd82d-9121-491f-b0fd-9d1910e24235') // api for the get request
+     .then(response => response.json())
+     .then(data => {
+         console.log(data)
+          def=data;
+         console.log(def)
+         let utterance = new SpeechSynthesisUtterance("Spell... "+words[thisnum]);
+ speechSynthesis.speak(utterance);
+ $("#def").text(def[0].fl+", "+def[0].shortdef[0]+"; "+def[1].fl+", "+def[1].shortdef[0])
+ $("#pro").on("click",function(){
+     let utterance = new SpeechSynthesisUtterance("Spell... "+words[thisnum]);
+     speechSynthesis.speak(utterance);
+ })
+     });}
+             }else{fetch('https://dictionaryapi.com/api/v3/references/collegiate/json/'+words[thisnum]+'?key=01fdd82d-9121-491f-b0fd-9d1910e24235') // api for the get request
+     .then(response => response.json())
+     .then(data => {
+         console.log(data)
+          def=data;
+         console.log(def)
+         let utterance = new SpeechSynthesisUtterance("Spell... "+words[thisnum]);
+ speechSynthesis.speak(utterance);
+ $("#def").text(def[0].fl+", "+def[0].shortdef[0]+"; "+def[1].fl+", "+def[1].shortdef[0])
+ $("#pro").on("click",function(){
+     let utterance = new SpeechSynthesisUtterance("Spell... "+words[thisnum]);
+     speechSynthesis.speak(utterance);
+ })
+     });}
+             }else{fetch('https://dictionaryapi.com/api/v3/references/collegiate/json/'+words[thisnum]+'?key=01fdd82d-9121-491f-b0fd-9d1910e24235') // api for the get request
+     .then(response => response.json())
+     .then(data => {
+         console.log(data)
+          def=data;
+         console.log(def)
+         let utterance = new SpeechSynthesisUtterance("Spell... "+words[thisnum]);
+ speechSynthesis.speak(utterance);
+ $("#def").text(def[0].fl+", "+def[0].shortdef[0]+"; "+def[1].fl+", "+def[1].shortdef[0])
+ $("#pro").on("click",function(){
+     let utterance = new SpeechSynthesisUtterance("Spell... "+words[thisnum]);
+     speechSynthesis.speak(utterance);
+ })
+     });}
+             }else{fetch('https://dictionaryapi.com/api/v3/references/collegiate/json/'+words[thisnum]+'?key=01fdd82d-9121-491f-b0fd-9d1910e24235') // api for the get request
+     .then(response => response.json())
+     .then(data => {
+         console.log(data)
+          def=data;
+         console.log(def)
+         let utterance = new SpeechSynthesisUtterance("Spell... "+words[thisnum]);
+ speechSynthesis.speak(utterance);
+ $("#def").text(def[0].fl+", "+def[0].shortdef[0]+"; "+def[1].fl+", "+def[1].shortdef[0])
+ $("#pro").on("click",function(){
+     let utterance = new SpeechSynthesisUtterance("Spell... "+words[thisnum]);
+     speechSynthesis.speak(utterance);
+ })
+     });}
+             }else{fetch('https://dictionaryapi.com/api/v3/references/collegiate/json/'+words[thisnum]+'?key=01fdd82d-9121-491f-b0fd-9d1910e24235') // api for the get request
+     .then(response => response.json())
+     .then(data => {
+         console.log(data)
+          def=data;
+         console.log(def)
+         let utterance = new SpeechSynthesisUtterance("Spell... "+words[thisnum]);
+ speechSynthesis.speak(utterance);
+ $("#def").text(def[0].fl+", "+def[0].shortdef[0]+"; "+def[1].fl+", "+def[1].shortdef[0])
+ $("#pro").on("click",function(){
+     let utterance = new SpeechSynthesisUtterance("Spell... "+words[thisnum]);
+     speechSynthesis.speak(utterance);
+ })
+     });}
+             }else{fetch('https://dictionaryapi.com/api/v3/references/collegiate/json/'+words[thisnum]+'?key=01fdd82d-9121-491f-b0fd-9d1910e24235') // api for the get request
+     .then(response => response.json())
+     .then(data => {
+         console.log(data)
+          def=data;
+         console.log(def)
+         let utterance = new SpeechSynthesisUtterance("Spell... "+words[thisnum]);
+ speechSynthesis.speak(utterance);
+ $("#def").text(def[0].fl+", "+def[0].shortdef[0]+"; "+def[1].fl+", "+def[1].shortdef[0])
+ $("#pro").on("click",function(){
+     let utterance = new SpeechSynthesisUtterance("Spell... "+words[thisnum]);
+     speechSynthesis.speak(utterance);
+ })
+     });}
+             }else{fetch('https://dictionaryapi.com/api/v3/references/collegiate/json/'+words[thisnum]+'?key=01fdd82d-9121-491f-b0fd-9d1910e24235') // api for the get request
+     .then(response => response.json())
+     .then(data => {
+         console.log(data)
+          def=data;
+         console.log(def)
+         let utterance = new SpeechSynthesisUtterance("Spell... "+words[thisnum]);
+ speechSynthesis.speak(utterance);
+ $("#def").text(def[0].fl+", "+def[0].shortdef[0]+"; "+def[1].fl+", "+def[1].shortdef[0])
+ $("#pro").on("click",function(){
+     let utterance = new SpeechSynthesisUtterance("Spell... "+words[thisnum]);
+     speechSynthesis.speak(utterance);
+ })
+     });}
+             }else{fetch('https://dictionaryapi.com/api/v3/references/collegiate/json/'+words[thisnum]+'?key=01fdd82d-9121-491f-b0fd-9d1910e24235') // api for the get request
+     .then(response => response.json())
+     .then(data => {
+         console.log(data)
+          def=data;
+         console.log(def)
+         let utterance = new SpeechSynthesisUtterance("Spell... "+words[thisnum]);
+ speechSynthesis.speak(utterance);
+ $("#def").text(def[0].fl+", "+def[0].shortdef[0]+"; "+def[1].fl+", "+def[1].shortdef[0])
+ $("#pro").on("click",function(){
+     let utterance = new SpeechSynthesisUtterance("Spell... "+words[thisnum]);
+     speechSynthesis.speak(utterance);
+ })
+     });}
+             }else{fetch('https://dictionaryapi.com/api/v3/references/collegiate/json/'+words[thisnum]+'?key=01fdd82d-9121-491f-b0fd-9d1910e24235') // api for the get request
+     .then(response => response.json())
+     .then(data => {
+         console.log(data)
+          def=data;
+         console.log(def)
+         let utterance = new SpeechSynthesisUtterance("Spell... "+words[thisnum]);
+ speechSynthesis.speak(utterance);
+ $("#def").text(def[0].fl+", "+def[0].shortdef[0]+"; "+def[1].fl+", "+def[1].shortdef[0])
+ $("#pro").on("click",function(){
+     let utterance = new SpeechSynthesisUtterance("Spell... "+words[thisnum]);
+     speechSynthesis.speak(utterance);
+ })
+     });}}
+         }
+         $("#go").on("click",function(){
+             if(words[thisnum].toLowerCase().replace(" ","")===$("#word").val().toLowerCase().replace(" ","")){
+                 $("#page").hide()
+                 $("#check").show()
+                 setTimeout(function(){
+                     $("#page").show()
+                     $("#check").hide()
+                     fetchword()
+                     $("#word").val("")
+                     
+                 },2000)
+                 correct++;
+                 total++;
+                 used[thisnum]=true;
+                 console.log("total updated")
+                 fetchword()
+             }else{
+                 incorrect++;
+ $("#page").hide()
+ $("#wrong").show()
+ $("#11").text("Oops! The correct spelling is "+words[thisnum]+".")
+             }
+         })
+         $("#wrongnext").on("click",function(){
+             $("#page").show()
+             $("#wrong").hide()
+             fetchword()
+             total++;
+             used[thisnum]=true;
+             $("#word").val("")
+         })
+         $("#soo").on("click",function(){
+             localStorage.setItem("tn",thisnum)
+             localStorage.setItem("cor",correct)
+             localStorage.setItem("incor",incorrect)
+             window.location.href = "so.html"
+             
+         })
+ 
+        </script>
     </body>
 </html>
